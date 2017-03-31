@@ -182,7 +182,7 @@
                       Powered by <a href="http://startbootstrap.com">Start Bootstrap</a>
                     </div>
                     <div class="col-lg-12">
-                        Copyright &copy; Witawat Daungjaiboon 2016
+                        Copyright &copy; Witawat Daungjaiboon 2017
                     </div>
 
                 </div>
@@ -214,12 +214,27 @@
                         <div class="modal-body">
                             <h2>Grocery Sales Visualization</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/uc.gif" class="img-responsive img-centered" alt="">
                             <p>	Our group sought to investigate grocery retailers through multiple data visualization techniques from data set called “The Complete Journey”
                               released from the data science firm, dunnhumby. Doing so would help retailers have better understanding of buyer habits and product relationship to
                               improve their marketing strategies. The data set we chose is consisted of 276,484 transactions, 2,500 households’ demographic details, and 92,353 items of products.
-                              We divided up into two big aspects of the investigation—marketing and product relationship aspects. </p>
-
+                              We divided up into two big aspects of the investigation—marketing and product relationship aspects. I used R and Tableau to create these visualizations</p>
+                             <h3 align="left">Simple Bar Graph</h3>
+                            <img src="img/portfolio/simplebar.png" class="img-responsive img-centered" alt="">
+                            <p>	This plot shows what age range spend the most when transactions occur. I present this chart as a bar graph including zero because it will not be exaggerated if I did not include zero. As we can see, the people whose age between 45-54 spend the most among others. </p>
+                             <h3 align="left">Treemap</h3>
+                            <img src="img/portfolio/treemap.png" class="img-responsive img-centered" alt="">
+                            <p>	This plot helps us to clearly separate which campaign is the most successful (represented by area of squares) divided by age range (presented by different color). Campaign number 18 is the most successful in people with the age of 45-54, 25-34, 55-64 and 65+, and campaign number 13 for 35-44 and 19-24. </p>
+ 							 <h3 align="left">Violin Plot (Campaigns)</h3>
+                            <img src="img/portfolio/violin_cpng.png" class="img-responsive img-centered" alt="">
+                            <p>	This plot reveals customers in which age range redeem the most coupons divided by campaign (Y-axis). The width of violin plot represents number of coupon redemption. We can obviously see Campaign number 18 is a big hit across all customers’ age range except 35-44 and 19-24 (can be clearly distinguished in graph 4). People with the age between 45-54 redeem most coupon across all customers, and 19-24 use least coupon.  </p>
+                            <h3 align="left">Violin Plot (Sales)</h3>
+                            <img src="img/portfolio/vio_sales.png" class="img-responsive img-centered" alt="">
+                            <p>	This plot reveals the distribution of sale values summary by different age range. Having changed from normal scale to logarithmic scale for sale values summary helps the data exhibit itself better rather clumping on the X-axis. Overlaying box/whisker plots on violin plot also helps us to see which group of customers tend to spend the most. From the normal scale plot (left), the box/whiskers plots also help us detect the outliners that may affect analysis result.  </p>
+                            <h3 align="left">Network Graph</h3>
+                            <img src="img/portfolio/Network.png" class="img-responsive img-centered" alt="">
+                            <p>	This graph reveals the relationship between different products being randomly chosen linked together by lines. Line width show how much they are correlated to one another. The thicker line, the more highly correlated of products are. For example, from the thickness alone, we can see people who have baby are more likely to buy film/camera products, and beer rather than vitamins. The coffee and fitness & diet products are not correlated at all.   </p>
+                            <h3 align="left">Conclusion</h3>
+                            <p>	Having explored and analyzed the data through different visualization techniques, I found the different patterns in coupon redemption, how much different ages customers spend, the most successful campaign and product relationship. Those patterns potentially help retailers have better understanding their customers in order to make the decision for store improvement and gain more profit. Looking at the data alone does not help a non-technical person have an idea what is going on, yet after the proper visualization techniques been applied, the insights/patterns hidden in the data are revealed with easily understandable. The data visualization definitely facilitates the data analysis and decision-making processes.    </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -243,12 +258,29 @@
                             <h2>Data Mining STEP-BY-STEP</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/uc.gif" class="img-responsive img-centered" alt="">
-                            <p>	Improving the classification algorithm performance can be done in many different ways, but the most popular approaches are to use bagging and boosting with different weak learners.
-                              In this paper, we use the Lung nodules data set generated from 2D lung nodule images and extracted into content-based features.
+                            <p>	Improving the classification algorithm performance can be done in many different ways, but the most popular approaches are to use bagging and boosting with different weak learners. In this project, we use the Lung nodules data set generated from 2D lung nodule images and extracted into content-based features.
                               The data consists of 810 instances with 65 useful feature attributes with four likelihood of malignancy ratings given by four different radiologists.
-                              We also use three different data preprocessing approaches (binning, balancing and feature extraction (PCA)) and fit six different classifiers in each preprocessed data.
-                              The comparison of each classifier on each data are also represented in the paper,
-                               in order to make assumption whether bagging or boosting is outperformed to one another.</p>
+                              We also use three different data preprocessing approaches (binning, balancing and feature extraction (PCA)) and fit six different classifiers in each preprocessed data set.
+                              We then compare all classifiers in order to make assumption whether bagging or boosting is outperformed to one another.</p>
+                              
+
+                              <h3 align="left">Data Preprcessing</h3>
+
+                              <h5 align="left">Bin Dependent Variables</h5>
+                              <img src="img/portfolio/mining/bin.png" class="img-responsive img-centered" alt="">
+                               <p>	Our data set consists of 5 malignancy ratings (1, 2, 3, 4 and 5) given by 4 different radiologists, we then decide to bin the classes by grouping them into 2 classes -class 1, 2, 3 and class 4 and 5 as inconclusive and likely suspicious of malignancy respectively. In order to do so, we have to average all ratings given by 4 different radiologists, and round it up to get the single rating values.</p>
+
+                               <h5 align="left">Imbalanced Data Remedy</h5>
+                              <img src="img/portfolio/mining/imbal.png" class="img-responsive img-centered" alt="">
+                               <p>	Having binned the class variables into two classes, we can obviously see the data become imbalanced with inconclusive and likely class, 682 and 128 respectively. Minorities would be ignored from the model prediction. We resolved this issue by applying SMOTE function in DMwR library on raw data. With this function, it is said by Torgo, L. (2010) to artificially generate new examples from the minority class using the nearest neighbors of these cases, and majority class examples are also under-sampled, leading to a more balanced dataset.</p>
+
+                                <h5 align="left">Feature Extraction (PCA)</h5>
+                              <img src="img/portfolio/mining/pca1.png" class="img-responsive img-centered" alt="">
+                               <p>	Principle Component Analysis (PCA) is the feature extraction technique that can reduce the dimension space of the data set. This data set has many attributes (more than 60 attributes). After applying PCA, the first feature we extract from the attribute space captures the most variability in the data. </p>
+                                <img src="img/portfolio/mining/pca2.png" class="img-responsive img-centered" alt="">
+                               <p>	Even though the scree plot suggests that the first four components to capture the most variance (66.89%) in the data, the variance still does not meet our expectation (at least 95%). In order to do so, we then decide to use 22 components to capture at least 95 percent of the variances in the data.  </p>
+
+
 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
